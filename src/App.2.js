@@ -1,6 +1,6 @@
 // Implem 2 : Syntaxe à base de composant de type classe
 // => Chargement dynamique du composant exposé par
-//    l'export nommé "Content" depuis le module "Content"
+//    l'export nommé "Content" depuis le module "MonComposant"
 import React, { Component } from "react";
 
 const Loading = () => <div>Loading...</div>;

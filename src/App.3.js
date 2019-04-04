@@ -1,6 +1,6 @@
 // Implem 3 : Syntaxe à base de composant fonctionnel
 // => Chargement dynamique du composant exposé par
-//    l'export nommé "Content" depuis le module "Content"
+//    l'export nommé "Content" depuis le module "MonComposant"
 import React, { useState, useEffect } from "react";
 
 const Loading = () => <div>Loading...</div>;
