@@ -28,8 +28,6 @@ const styles = css`
   .heading {
     background: pink;
     padding: 6px 12px;
-  }
-  .heading--left {
     text-align: left;
   }
   .heading--center {
@@ -47,13 +45,12 @@ const styles = css`
 
 const Heading = ({ tag, align, children, ...props }) => {
   const Tag = tag || 'h1';
-  const tagClasses = classnames('heading', props.className, {
-    'heading--left': align === 'left',
+  const tagClasses = classnames('heading', {
     'heading--center': align === 'center',
     'heading--right': align === 'right'
   });
   return (
-    <Tag className={tagClasses} {...props}>
+    <Tag {...props} className={tagClasses}>
       {children}
       <style jsx>{styles}</style>
     </Tag>
@@ -62,7 +59,7 @@ const Heading = ({ tag, align, children, ...props }) => {
 
 const App = () => (
   <div className="App">
-    <Heading tag="h2" align="center">
+    <Heading tag="h2" align="right">
       <span role="img" aria-label="wave">
         👋
       </span>
