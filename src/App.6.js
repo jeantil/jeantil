@@ -43,9 +43,9 @@ const styles = css`
   }
 `;
 
-const Heading = ({ tag, align, children, ...props }) => {
+const Heading = ({ tag, align, className, children, ...props }) => {
   const Tag = tag || 'h1';
-  const tagClasses = classnames('heading', {
+  const tagClasses = classnames(className, 'heading', {
     'heading--center': align === 'center',
     'heading--right': align === 'right'
   });
@@ -59,7 +59,7 @@ const Heading = ({ tag, align, children, ...props }) => {
 
 const App = () => (
   <div className="App">
-    <Heading tag="h2" align="right">
+    <Heading className="toto" tag="h2" align="right">
       <span role="img" aria-label="wave">
         👋
       </span>
