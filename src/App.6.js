@@ -23,8 +23,22 @@ const breakpoints = {
   md: '960px',
   lg: '1280px'
 };
+const emojiStyles = css`
+  .emoji {
+    background-color: white;
+  }
+`;
+const Emoji = ({ className, icon, ...props }) => {
+  const tagClasses = classnames(className, 'emoji');
+  return (
+    <span className={tagClasses} role="img" aria-label="wave">
+      {icon}
+      <style jsx>{emojiStyles}</style>
+    </span>
+  );
+};
 
-const styles = css`
+const headingStyles = css`
   .heading {
     background: pink;
     padding: 6px 12px;
@@ -52,19 +66,26 @@ const Heading = ({ tag, align, className, children, ...props }) => {
   return (
     <Tag {...props} className={tagClasses}>
       {children}
-      <style jsx>{styles}</style>
+      <style jsx>{headingStyles}</style>
     </Tag>
   );
 };
+const appStyles = css`
+  span.emoji--blue {
+    background: blue;
+  }
+  span.emoji--red {
+    background: red;
+  }
+`;
 
 const App = () => (
   <div className="App">
     <Heading className="toto" tag="h2" align="right">
-      <span role="img" aria-label="wave">
-        👋
-      </span>
-      <span>Cédric</span>
+      <Emoji className="emoji--blue" icon="👋" />
+      <span className="emoji--red">Cédric</span>
     </Heading>
+    <style jsx>{appStyles}</style>
   </div>
 );
 
